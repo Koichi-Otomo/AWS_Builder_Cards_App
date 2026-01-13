@@ -8,6 +8,20 @@
 
 - [AWS Builder Cards 日本語版 公式リポジトリ](https://github.com/jaws-ug/AWS-BuilderCards-Japanese)
 - [AWS Builders Flash - Japanese Builder Cards](https://aws.amazon.com/jp/builders-flash/202405/japanese-builder-cards/)
+- [AWS Builders Flash - Builder Cards 2nd Edition](https://aws.amazon.com/jp/builders-flash/202509/builder-cards-2nd-edition/)
+
+## AWS BuilderCards 2nd Edition とは
+
+AWS BuilderCards 2nd Edition は、初版から改良されたバージョンで、より戦略的で楽しいゲーム体験を提供します。
+
+### 2nd Edition の主な変更点
+
+- **コストアイコンシステムの導入**: Builder Cardにコストアイコン（右上の数字）が追加され、コストアイコンがあるカードとないカードに分類
+- **カード分類の明確化**: Builder Cardをコストアイコンの有無で分けて管理
+- **新しいカードの追加**: Amazon EC2 Auto Scalingなどの新しいAWSサービスカードが追加
+- **バランス調整**: ゲームバランスの改善とプレイ時間の最適化
+- **ルールの簡素化**: より理解しやすいルール構成
+- **戦略性の向上**: より深い戦略的思考が求められるゲームプレイ
 
 ## AWS BuilderCards とは
 
@@ -46,21 +60,7 @@ Builder Card (ビルダーカード) は、左上に数字が記載されたカ�
 
 - Amazon EC2やAWS Lambdaなど AWSのサービスやツール・フレームワークがアイコンとセットで記載
 - カードによってさまざまな効果や効果の発生条件がある
-- **購入方法**:
-  - TCO (コスト) で購入可能な Builder Card
-  - AWSome (オーサム) クレジットで購入可能な Builder Card
-
-#### Builder Card の購入コスト
-
-> **注意点**
-> 
-> 購入に必要な TCO (コスト)、購入に必要な AWSome クレジットはカードを購入するために必要なポイントです。
-> - **黒で記載された数字**: TCO
-> - **オレンジで記載された数字**: AWSome クレジット
-> 
-> 例:
-> - Amazon EC2 カードを購入するには、TCO 4ポイントが必要
-> - Amazon EC2 Autoscaling は、AWSome クレジットが2ポイント必要（TCOでは購入できません）
+- **購入方法**: AWSome (オーサム) クレジットで購入可能
 
 #### エフェクト (カードの効果)
 
@@ -89,6 +89,12 @@ Builder Card (ビルダーカード) は、左上に数字が記載されたカ�
 
 ### 2. Builder Card をシャッフルする
 
+Builder Card をコストアイコンがついているカードとついていないカードを分けます。
+
+**コストアイコンについて**:
+- コストアイコンは Builder Card の右上に表示される数字
+- 例: Amazon EC2 Auto Scaling はコストアイコンがついているカード
+
 Builder Card をよくシャッフルします。
 
 > **重要**: シャッフルが不十分だと同じカードが固まりゲームバランスが崩れる可能性があります。特に未使用のカードでプレイする場合は入念にシャッフルをしてください。
@@ -105,8 +111,7 @@ Well-Architected Card は、1ポイントと3ポイントの2種類がありま�
 各プレイヤーから見て中央にカードを配置します。このスペースを**Marketplace**と呼びます。
 
 **カードの配置方法**:
-- **TCO で購入可能な Builder Card**: 山から4枚
-- **AWSome クレジットで購入可能な Builder Card**: 山から1枚
+- **AWSome クレジットで購入可能な Builder Card**: 山から複数枚を配置
 
 ### ゲーム時間短縮のコツ
 
@@ -135,8 +140,8 @@ Well-Architected Card は、1ポイントと3ポイントの2種類がありま�
 最初、各プレイヤーの手元には10枚の Starter Card があります。まず初めにターンを重ねて手持ちのカードを12枚まで増やします。
 
 **手順**:
-1. 最初のプレーヤーから時計回りに Marketplace の【TCO で購入可能な Builder Card】から好きなカードを1枚取る
-2. 1枚とったら、山札から1枚を場に補充して再度4枚にする（**リフィル**）
+1. 最初のプレーヤーから時計回りに Marketplace の【AWSome クレジットで購入可能な Builder Card】から好きなカードを1枚取る
+2. 1枚とったら、山札から1枚を場に補充する（**リフィル**）
 3. 次のプレイヤーも同様の作業を繰り返す
 4. 一巡したら、逆順（反時計回り）に作業を行い、手持ちのカードを12枚にする
 
@@ -175,15 +180,6 @@ Well-Architected Card は、1ポイントと3ポイントの2種類がありま�
 - デプロイできない場合は、ビルドフェーズ終了となり、購入フェーズに進む
 - 各カードが持つ条件が揃うとアーキテクチャのデプロイ時にエフェクト（効果）を発動可能
 
-**計算例**:
-```
-TCO: 1 + 2 + 1 + 2 + 1 = 7
-AWSome クレジット: 2 + 0 + 0 + 0 + 0 = 2
-エフェクト: なし
-```
-
-アーキテクチャをデプロイすることによって発生した効果と、手札の Build Cards、Starter Cards の TCO と AWSome クレジット を計算してください。TCO と AWSome クレジットは、次の購入フェーズで利用します。
-
 #### 上級者向け: アーキテクチャ説明
 
 > **ゲームに慣れてきたら**
@@ -198,13 +194,12 @@ AWSome クレジット: 2 + 0 + 0 + 0 + 0 = 2
 
 ### フェーズ2: 購入フェーズ
 
-次は購入フェーズです。ビルドフェーズで計算した TCO と AWSome クレジット に応じた Marketplace に並んでいる Build Card または Well-Architected Card を購入します。
+次は購入フェーズです。ビルドフェーズで計算した AWSome クレジット に応じた Marketplace に並んでいる Build Card または Well-Architected Card を購入します。
 
 - **購入回数**: フェーズごとに1回（1枚）
-- **購入対象**: TCO で購入可能な Builder Card または AWSome クレジットで購入可能な Builder Card
+- **購入対象**: AWSome クレジットで購入可能な Builder Card
 
 **購入例**:
-- TCO: 7ポイント → TCO コストが7以下のカードが購入可能
 - AWSome クレジット: 2ポイント → AWSome クレジットが2以下のカードが購入可能
 
 購入後、Marketplace に対して購入したカードの種類に応じて山札から1枚を補充します。

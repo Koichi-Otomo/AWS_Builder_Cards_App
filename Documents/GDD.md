@@ -52,7 +52,7 @@ Well-Architectedカードが無くなるとゲーム終了
 
 ## ゲームルール詳細
 
-詳細なゲームルールについては、[AWS Builder Cards 参考資料](AWS_Builder_Cards_Reference.md)を参照してください。
+詳細なゲームルールについては、[AWS Builder Cards 参考資料](Reference.md)を参照してください。
 
 ## 操作
 
