@@ -64,12 +64,18 @@ ExportedObj/
 ehthumbs.db
 Thumbs.db
 
-# Exclude everything except Documents and Assets/Scripts
+# Exclude everything except specified folders
 /*
 !/Documents/
+!/ProjectSettings/
+!/Packages/
 !/Assets/
 /Assets/*
 !/Assets/Scripts/
 !/Assets/Scripts.meta
+!/Assets/Scenes/
+!/Assets/Scenes.meta
+!/Assets/Prefabs/
+!/Assets/Prefabs.meta
 !/.gitignore
 !/README.md
