@@ -4,7 +4,11 @@ using UnityEngine;
 
 namespace AWSBuilderCards
 {
-    public class Player
+    /// <summary>
+    /// プレイヤークラス
+    /// IGameStateManageable: ゲーム状態管理（Setup, Cleanup）
+    /// </summary>
+    public class Player : IGameStateManageable
     {
         public string Name { get; private set; }
         public Deck Deck { get; private set; } = new Deck();
@@ -27,6 +31,14 @@ namespace AWSBuilderCards
                 var c = Deck.DrawTop();
                 if (c != null) Hand.Add(c);
             }
+        }
+
+        /// <summary>
+        /// IGameStateManageable 実装: 初期セットアップ
+        /// </summary>
+        public void Setup()
+        {
+            SetupStartingDeck();
         }
 
         public void SetupStartingDeck()
@@ -101,6 +113,9 @@ namespace AWSBuilderCards
             return true;
         }
 
+        /// <summary>
+        /// IGameStateManageable 実装: クリーンアップ
+        /// </summary>
         public void Cleanup()
         {
             foreach (var c in Hand) Deck.AddToDiscard(c);

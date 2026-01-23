@@ -3,7 +3,11 @@ using UnityEngine;
 
 namespace AWSBuilderCards
 {
-    public abstract class Effect
+    /// <summary>
+    /// ゲームエフェクトの基本抽象クラス
+    /// IExecutable インターフェースを実装
+    /// </summary>
+    public abstract class Effect : IExecutable
     {
         public string Name { get; protected set; }
         public string Description { get; protected set; }

@@ -4,7 +4,11 @@ using UnityEngine;
 
 namespace AWSBuilderCards
 {
-    public class Deck
+    /// <summary>
+    /// デッキクラス
+    /// IGainable: カード取得機能（Gain）
+    /// </summary>
+    public class Deck : IGainable
     {
         List<Card> draw = new List<Card>();
         List<Card> discard = new List<Card>();
@@ -43,6 +47,9 @@ namespace AWSBuilderCards
             return c;
         }
 
+        /// <summary>
+        /// IGainable 実装: カードを取得
+        /// </summary>
         public void Gain(Card c)
         {
             discard.Add(c);

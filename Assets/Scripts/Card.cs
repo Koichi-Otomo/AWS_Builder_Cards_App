@@ -3,7 +3,14 @@ using UnityEngine;
 
 namespace AWSBuilderCards
 {
-    public abstract class Card
+    /// <summary>
+    /// ゲームカードの基本抽象クラス
+    /// IValuable: 価値評価機能（VP、クレジット）
+    /// IPlayable: カード実行機能（OnPlay）
+    /// IUIDisplayable: UI表示機能
+    /// IEffectContainer: エフェクト管理機能
+    /// </summary>
+    public abstract class Card : IValuable, IPlayable, IUIDisplayable, IEffectContainer
     {
         public string Name { get; protected set; }
         public int Cost { get; protected set; } // 2nd Edition: 統一されたコスト
@@ -26,13 +33,30 @@ namespace AWSBuilderCards
         public virtual void OnPlay(Player player, GameManager game) 
         {
             // エフェクトを実行
+            ExecuteAllEffects(player, game);
+        }
+
+        public virtual int VictoryPoints(Player player) { return 0; }
+        public virtual int CreditValue() { return 0; }
+
+        // IUIDisplayable 実装
+        public virtual string GetDisplayName() => $"{Name} ({Cost})";
+        public virtual string GetDisplayDescription() => Description;
+        public virtual CardType GetCardType() => Type;
+
+        // IEffectContainer 実装
+        public void AddEffect(Effect effect)
+        {
+            if (effect != null) Effects.Add(effect);
+        }
+
+        public void ExecuteAllEffects(Player player, GameManager game)
+        {
             foreach (var effect in Effects)
             {
                 effect.Execute(player, game);
             }
         }
-        public virtual int VictoryPoints(Player player) { return 0; }
-        public virtual int CreditValue() { return 0; }
     }
 
     // ----- Concrete cards -----

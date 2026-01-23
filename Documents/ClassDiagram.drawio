@@ -1,0 +1,291 @@
+<mxfile host="app.diagrams.net" modified="2026-01-23T00:00:00.000Z" agent="5.0" etag="class-diagram-with-interfaces" version="24.0">
+  <diagram id="class-diagram-interfaces" name="AWS Builder Cards Class Diagram with Interfaces">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1800" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- INTERFACES SECTION -->
+        <mxCell id="label-interfaces" value="&lt;&lt;Interfaces&gt;&gt;" style="text;fontSize=14;fontStyle=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="10" width="600" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- IValuable Interface -->
+        <mxCell id="interface-valuable" value="&lt;&lt;interface&gt;&gt;&#10;IValuable" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-valuable-methods" value="+ VictoryPoints(player): int&#10;+ CreditValue(): int" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-valuable">
+          <mxGeometry y="50" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- IPlayable Interface -->
+        <mxCell id="interface-playable" value="&lt;&lt;interface&gt;&gt;&#10;IPlayable" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-playable-methods" value="+ OnPlay(player, game): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-playable">
+          <mxGeometry y="50" width="160" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- IUIDisplayable Interface -->
+        <mxCell id="interface-uidisplayable" value="&lt;&lt;interface&gt;&gt;&#10;IUIDisplayable" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="50" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-uidisplayable-methods" value="+ GetDisplayName(): String&#10;+ GetDisplayDescription(): String&#10;+ GetCardType(): CardType" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-uidisplayable">
+          <mxGeometry y="50" width="160" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- IEffectContainer Interface -->
+        <mxCell id="interface-effectcontainer" value="&lt;&lt;interface&gt;&gt;&#10;IEffectContainer" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="50" width="180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-effectcontainer-properties" value="+ Effects: List&lt;Effect&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-effectcontainer">
+          <mxGeometry y="50" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-effectcontainer-sep" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="interface-effectcontainer">
+          <mxGeometry y="70" width="180" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-effectcontainer-methods" value="+ AddEffect(effect): void&#10;+ ExecuteAllEffects(player, game): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-effectcontainer">
+          <mxGeometry y="71" width="180" height="39" as="geometry" />
+        </mxCell>
+        
+        <!-- IExecutable Interface -->
+        <mxCell id="interface-executable" value="&lt;&lt;interface&gt;&gt;&#10;IExecutable" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="50" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-executable-properties" value="+ Name: String&#10;+ Description: String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-executable">
+          <mxGeometry y="50" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-executable-sep" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="interface-executable">
+          <mxGeometry y="80" width="160" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-executable-methods" value="+ Execute(player, game): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-executable">
+          <mxGeometry y="81" width="160" height="19" as="geometry" />
+        </mxCell>
+        
+        <!-- IGainable Interface -->
+        <mxCell id="interface-gainable" value="&lt;&lt;interface&gt;&gt;&#10;IGainable" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="50" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-gainable-methods" value="+ Gain(card): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-gainable">
+          <mxGeometry y="50" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- IGameStateManageable Interface -->
+        <mxCell id="interface-statemanageable" value="&lt;&lt;interface&gt;&gt;&#10;IGameStateManageable" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="50" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-statemanageable-methods" value="+ Setup(): void&#10;+ Cleanup(): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="interface-statemanageable">
+          <mxGeometry y="50" width="180" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- ENUMS SECTION -->
+        <mxCell id="label-enums" value="&lt;&lt;Enums&gt;&gt;" style="text;fontSize=14;fontStyle=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="200" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="enum-cardtype" value="&lt;&lt;enum&gt;&gt;&#10;CardType" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="enum-cardtype-items" value="+ Starter&#10;+ WellArchitected&#10;+ Builder" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="enum-cardtype">
+          <mxGeometry y="40" width="150" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- CLASSES SECTION -->
+        <mxCell id="label-classes" value="&lt;&lt;Abstract Classes&gt;&gt;" style="text;fontSize=14;fontStyle=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="300" y="190" width="400" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- Abstract Effect Class -->
+        <mxCell id="class-effect" value="&lt;&lt;abstract&gt;&gt;&#10;Effect" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;italic=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="230" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="class-effect-separator" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="class-effect">
+          <mxGeometry y="50" width="200" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="class-effect-methods" value="+ Execute(player, game): void*" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-effect">
+          <mxGeometry y="51" width="200" height="39" as="geometry" />
+        </mxCell>
+        
+        <!-- Abstract Card Class -->
+        <mxCell id="class-card" value="&lt;&lt;abstract&gt;&gt;&#10;Card" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;italic=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="230" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class-card-properties" value="+ Name: String&#10;+ Cost: int&#10;+ Type: CardType&#10;+ ServiceCategory: String&#10;+ Effects: List&lt;Effect&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-card">
+          <mxGeometry y="50" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="class-card-separator" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="class-card">
+          <mxGeometry y="130" width="280" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="class-card-methods" value="+ OnPlay(...): void&#10;+ AddEffect(effect): void&#10;+ ExecuteAllEffects(...): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-card">
+          <mxGeometry y="131" width="280" height="19" as="geometry" />
+        </mxCell>
+        
+        <!-- Card Subclasses -->
+        <mxCell id="class-starter-card" value="StarterCard" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="500" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="class-starter-card-properties" value="+ Value: int" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-starter-card">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="class-starter-card-separator" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="class-starter-card">
+          <mxGeometry y="52" width="140" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="class-starter-card-methods" value="" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-starter-card">
+          <mxGeometry y="53" width="140" height="17" as="geometry" />
+        </mxCell>
+        
+        <!-- BuilderCard -->
+        <mxCell id="class-builder-card" value="BuilderCard" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="500" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="class-builder-card-properties" value="" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-builder-card">
+          <mxGeometry y="26" width="140" height="0" as="geometry" />
+        </mxCell>
+        <mxCell id="class-builder-card-separator" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="class-builder-card">
+          <mxGeometry y="26" width="140" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="class-builder-card-methods" value="" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="class-builder-card">
+          <mxGeometry y="27" width="140" height="43" as="geometry" />
+        </mxCell>
+        
+        <!-- WellArchitectedCard -->
+        <mxCell id="class-well-architected-card" value="WellArchitectedCard" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="500" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="class-well-architected-card-properties" value="- points: int" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-well-architected-card">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="class-well-architected-card-separator" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="class-well-architected-card">
+          <mxGeometry y="52" width="160" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="class-well-architected-card-methods" value="" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="class-well-architected-card">
+          <mxGeometry y="53" width="160" height="17" as="geometry" />
+        </mxCell>
+        
+        <!-- Effect Implementations -->
+        <mxCell id="class-draw-effect" value="DrawCardsEffect" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="500" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="class-draw-effect-methods" value="- cardCount: int" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-draw-effect">
+          <mxGeometry y="26" width="130" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- Player Class -->
+        <mxCell id="class-player" value="Player" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="230" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="class-player-properties" value="+ Name: String&#10;+ Deck: Deck&#10;+ Hand: List&lt;Card&gt;&#10;+ Actions: int&#10;+ Credits: int" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-player">
+          <mxGeometry y="26" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="class-player-separator" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="class-player">
+          <mxGeometry y="106" width="220" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="class-player-methods" value="+ Setup(), Cleanup(): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-player">
+          <mxGeometry y="107" width="220" height="33" as="geometry" />
+        </mxCell>
+        
+        <!-- Deck Class -->
+        <mxCell id="class-deck" value="Deck" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="500" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="class-deck-properties" value="- draw: List&lt;Card&gt;&#10;- discard: List&lt;Card&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-deck">
+          <mxGeometry y="26" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="class-deck-separator" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="class-deck">
+          <mxGeometry y="66" width="160" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="class-deck-methods" value="+ Gain(card): void*" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-deck">
+          <mxGeometry y="67" width="160" height="33" as="geometry" />
+        </mxCell>
+        
+        <!-- GameManager -->
+        <mxCell id="class-game-manager" value="GameManager : MonoBehaviour" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="500" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="class-game-manager-properties" value="+ players: List&lt;Player&gt;&#10;+ supply: Supply" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-game-manager">
+          <mxGeometry y="26" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="class-game-manager-separator" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="class-game-manager">
+          <mxGeometry y="66" width="180" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="class-game-manager-methods" value="- SetupSupply(), SetupPlayers(): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="class-game-manager">
+          <mxGeometry y="67" width="180" height="33" as="geometry" />
+        </mxCell>
+        
+        <!-- IMPLEMENTATION RELATIONSHIPS (Realization) -->
+        <!-- Card implements IValuable -->
+        <mxCell id="edge-card-impl-valuable" value="implements" style="endArrow=block;endSize=16;endFill=0;dashed=1;html=1;exitX=0.3;exitY=0;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-card" target="interface-valuable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Card implements IPlayable -->
+        <mxCell id="edge-card-impl-playable" value="implements" style="endArrow=block;endSize=16;endFill=0;dashed=1;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-card" target="interface-playable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Card implements IUIDisplayable -->
+        <mxCell id="edge-card-impl-uidisplayable" value="implements" style="endArrow=block;endSize=16;endFill=0;dashed=1;html=1;exitX=0.7;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-card" target="interface-uidisplayable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Card implements IEffectContainer -->
+        <mxCell id="edge-card-impl-effectcontainer" value="implements" style="endArrow=block;endSize=16;endFill=0;dashed=1;html=1;exitX=0.85;exitY=0;exitDx=0;exitDy=0;entryX=0.4;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-card" target="interface-effectcontainer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Effect implements IExecutable -->
+        <mxCell id="edge-effect-impl-executable" value="implements" style="endArrow=block;endSize=16;endFill=0;dashed=1;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-effect" target="interface-executable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Player implements IGameStateManageable -->
+        <mxCell id="edge-player-impl-statemanageable" value="implements" style="endArrow=block;endSize=16;endFill=0;dashed=1;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-player" target="interface-statemanageable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Deck implements IGainable -->
+        <mxCell id="edge-deck-impl-gainable" value="implements" style="endArrow=block;endSize=16;endFill=0;dashed=1;html=1;exitX=0.6;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-deck" target="interface-gainable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- INHERITANCE RELATIONSHIPS -->
+        <!-- StarterCard extends Card -->
+        <mxCell id="edge-startercard-extends-card" value="" style="endArrow=block;endSize=16;endFill=1;html=1;exitX=0.4;exitY=0;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-starter-card" target="class-card">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- BuilderCard extends Card -->
+        <mxCell id="edge-buildercard-extends-card" value="" style="endArrow=block;endSize=16;endFill=1;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-builder-card" target="class-card">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- WellArchitectedCard extends Card -->
+        <mxCell id="edge-wellarchcard-extends-card" value="" style="endArrow=block;endSize=16;endFill=1;html=1;exitX=0.6;exitY=0;exitDx=0;exitDy=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-well-architected-card" target="class-card">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- DrawCardsEffect extends Effect -->
+        <mxCell id="edge-draweffect-extends-effect" value="" style="endArrow=block;endSize=16;endFill=1;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-draw-effect" target="class-effect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- COMPOSITION/AGGREGATION RELATIONSHIPS -->
+        <!-- Player has Deck -->
+        <mxCell id="edge-player-has-deck" value="has" style="endArrow=diamond;endSize=24;endFill=1;html=1;exitX=0.9;exitY=0.7;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-player" target="class-deck">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Card has Effects -->
+        <mxCell id="edge-card-has-effects" value="contains" style="endArrow=diamond;endSize=24;endFill=1;html=1;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-card" target="class-effect">
+          <mxGeometry x="50" y="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- GameManager has Players -->
+        <mxCell id="edge-gm-has-players" value="manages" style="endArrow=diamond;endSize=24;endFill=1;html=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="class-game-manager" target="class-player">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
